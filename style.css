@@ -11,6 +11,9 @@
 #quests .left {
   width: 40%;
 }
+#quests .left .button {
+  width: 100%;
+}
 #quests .right {
   width: 60%;
 }

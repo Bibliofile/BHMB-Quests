@@ -1,7 +1,7 @@
 import html from './quests-tab.html'
 import { MessageBotExtension } from '@bhmb/bot'
 import { QuestList, Quest, QuestListing } from './quest'
-import dragula from 'dragula'
+import dragula, { Drake } from 'dragula'
 import { UIExtensionExports } from '@bhmb/ui'
 
 const defaultQuests: Quest[] = []
@@ -24,6 +24,7 @@ export class QuestsTab {
   container: HTMLDivElement
   ex: MessageBotExtension
   ui: UIExtensionExports
+  drake: Drake | undefined
   selectedIdPath: number[] = []
 
   constructor (ex: MessageBotExtension, ui: UIExtensionExports, container: HTMLDivElement) {
@@ -37,7 +38,7 @@ export class QuestsTab {
       this.save()
     })
 
-    this.container.querySelector('.button')!.addEventListener('click', () => {
+    this.container.querySelector('.right .button')!.addEventListener('click', () => {
       if (!this.selectedIdPath.length) {
         return // Nothing to delete.
       }
@@ -48,22 +49,28 @@ export class QuestsTab {
         }
       })
     })
+
+    this.container.querySelector('.left .button')!.addEventListener('click', () => {
+      const id = this.getNewId()
+      const code = Math.random().toString(16).slice(2, 8)
+      this.setList(this.getList().concat([{ id, children: [] }]))
+      this.setQuests(this.getQuests().concat([{ id, name: 'Quest', description: '', code, xp: 1 }]))
+      this.rebuildList()
+    })
   }
 
-  getQuests = () => this.ex.storage.get('quests', defaultQuests)
-  getList = () => this.ex.storage.get('order', defaultQuestOrder)
-  getQuestById = (id: number) => this.getQuests().find(q => q.id === id)
-  getQuestListingById = (id: number) => {
-    const process = this.getList()
-    while (process.length) {
-      const listing = process.shift()!
-      if (listing.id === id) {
-        return listing
-      }
-      process.push(...listing.children)
-    }
+  private getQuests = () => this.ex.storage.get('quests', defaultQuests)
+  private setQuests = (quests: Quest[]) => this.ex.storage.set('quests', quests)
+  private getList = () => this.ex.storage.get('order', defaultQuestOrder)
+  private setList = (list: QuestList) => this.ex.storage.set('order', list)
+  private getNewId = () => {
+    const id = this.ex.storage.get('quest_id', 1)
+    this.ex.storage.set('quest_id', id + 1)
+    return id + 1
   }
-  deleteActiveQuest = () => {
+  private getQuestById = (id: number) => this.getQuests().find(q => q.id === id)
+
+  private deleteActiveQuest = () => {
     if (this.selectedIdPath.length) {
       const list = this.getList()
 
@@ -89,6 +96,7 @@ export class QuestsTab {
     const list = this.getList()
 
     const root = this.container.querySelector('ol')!
+    if (this.drake) this.drake.destroy()
     root.innerHTML = ''
 
     const addHtml = (container: HTMLOListElement, root: QuestList) => {
@@ -108,8 +116,8 @@ export class QuestsTab {
 
     addHtml(root, list)
 
-    dragula([root, ...root.querySelectorAll('.quest-list')], { revertOnSpill: true })
-      .on('drop', () => this.saveOrder())
+    this.drake = dragula([root, ...root.querySelectorAll('.quest-list')], { revertOnSpill: true })
+    this.drake.on('drop', () => this.saveOrder())
 
     root.addEventListener('click', event => {
       let target = event.target as HTMLElement
