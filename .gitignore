@@ -5,3 +5,4 @@ node_modules
 
 !rollup.config.js
 !src/exports.d.ts
+!build/bundle.js
