@@ -1,0 +1,7 @@
+node_modules
+.rpt2_cache
+*.js
+*.d.ts
+
+!rollup.config.js
+!src/exports.d.ts

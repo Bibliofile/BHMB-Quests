@@ -1,0 +1,51 @@
+// To compile this, just paste it into https://www.sassmeister.com/ with syntax set to Sass.
+// The resulting CSS should be placed in style.css in the root directory of this repo.
+$blue: #0000c4
+$red: #c40000
+$header-height: 52px
+
+#quests
+  display: flex
+
+  $padding: 5px
+  $left-width: 40%
+  .left, .right
+    padding: $padding
+    width: $left-width
+    height: calc(100vh - #{$header-height + $padding * 2})
+    overflow: auto
+  .left
+    width: $left-width
+  .right
+    width: 100% - $left-width
+
+.quest-list, .quest-item
+  list-style: none
+
+.quest-list
+  padding: 0
+
+.quest-list:empty
+  background: rgba(lighten($blue, 50%), 50%)
+  padding: .4em
+
+.quest-item
+  margin: 0 0 5px 5px
+  &.selected > .quest-text
+    font-weight: bold
+    &::before
+      content: "▶	 "
+
+
+
+.quest-text
+  display: inline-block
+  padding: .2em
+  user-select: none
+
+.quest-item
+  border-left: 2px solid $blue
+  @for $i from 1 through 30
+    $sel: if($i == 1, ".quest-item", selector-nest($sel, ".quest-item"))
+    #{$sel}
+      border-color: if($i % 2 == 0, $blue, $red)

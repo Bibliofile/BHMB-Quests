@@ -1,0 +1,22 @@
+{
+  "exName": "bibliofile/quests",
+  "dependencies": {
+    "@bhmb/bot": "^7.1.1",
+    "@bhmb/ui": "^1.0.8",
+    "rollup": "^0.63.5",
+    "rollup-plugin-string": "^2.0.2",
+    "rollup-plugin-typescript2": "^0.16.1",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^7.1.0",
+    "typescript": "^3.0.1"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@types/dragula": "^2.1.33",
+    "dragula": "^3.7.2",
+    "rollup-plugin-commonjs": "^9.1.4",
+    "rollup-plugin-node-resolve": "^3.3.0"
+  }
+}
