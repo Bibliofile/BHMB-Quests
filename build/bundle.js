@@ -1099,6 +1099,45 @@
       }
   }
 
+  var html$3 = "<div class=\"container\">\r\n  <h3 class=\"title\">Log</h3>\r\n  <p>Use this tab to audit XP gains to catch cheaters.</p>\r\n  <br>\r\n  <div class=\"field has-addons\">\r\n    <div class=\"control\">\r\n      <input class=\"input\" placeholder=\"Filter by name\">\r\n    </div>\r\n    <div class=\"control\">\r\n      <a class=\"button is-primary\">Refresh List</a>\r\n    </div>\r\n    <div class=\"control\">\r\n      <a class=\"button is-danger\">Clear log</a>\r\n    </div>\r\n  </div>\r\n  <ol></ol>\r\n</div>\r\n";
+
+  const KEY$1 = 'log';
+  class LogTab {
+      constructor(container, ex) {
+          this.getLogs = () => this.ex.storage.get(KEY$1, []);
+          this.container = container;
+          this.ex = ex;
+          container.innerHTML = html$3;
+          this.logContainer = container.querySelector('ol');
+          const input = container.querySelector('input');
+          input.addEventListener('input', () => this.filter(input.value));
+          container.querySelector('.is-primary').addEventListener('click', () => {
+              this.refreshList();
+              this.filter(input.value);
+          });
+          container.querySelector('.is-danger').addEventListener('click', () => {
+              this.ex.storage.set(KEY$1, []);
+              this.refreshList();
+          });
+      }
+      filter(search) {
+          search = search.toLocaleUpperCase();
+          this.logContainer.querySelectorAll('li').forEach(el => {
+              const name = el.dataset.name;
+              el.style.display = name.includes(search) ? '' : 'none';
+          });
+      }
+      refreshList() {
+          this.logContainer.innerHTML = '';
+          this.getLogs().forEach(log => {
+              const li = this.logContainer.appendChild(document.createElement('li'));
+              li.dataset.name = log.user;
+              const date = new Date(log.timestamp);
+              li.textContent = `${date.toLocaleDateString()} ${date.toLocaleTimeString()} ${log.user} - ${log.message}`;
+          });
+      }
+  }
+
   document.head.appendChild(document.createElement('style')).textContent = css;
   const TAB_GROUP = 'quests';
   bot.MessageBot.registerExtension('bibliofile/quests', ex => {
@@ -1109,6 +1148,7 @@
       const infoTab = new InfoTab(ui.addTab('Info', TAB_GROUP));
       const questsTab = new QuestsTab(ex, ui, ui.addTab('Quests', TAB_GROUP));
       const usersTab = new UsersTab(ui.addTab('Users', TAB_GROUP), ex);
+      const logTab = new LogTab(ui.addTab('Log', TAB_GROUP), ex);
       ex.remove = () => {
           ui.removeTabGroup(TAB_GROUP);
       };
