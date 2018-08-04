@@ -19,6 +19,10 @@ export interface Quest {
    * How much XP the user gets when completing this quest.
    */
   xp: number
+  /**
+   * Message sent when a user completes the quest
+   */
+  completeMessage: string
 }
 
 export type QuestListing = { id: number, children: QuestListing[] }

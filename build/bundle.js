@@ -6,7 +6,7 @@
 
   var css = "@charset \"UTF-8\";\r\n#quests {\r\n  display: flex;\r\n}\r\n#quests .left, #quests .right {\r\n  padding: 5px;\r\n  width: 40%;\r\n  height: calc(100vh - 62px);\r\n  overflow: auto;\r\n}\r\n#quests .left {\r\n  width: 40%;\r\n}\r\n#quests .left .button {\r\n  width: 100%;\r\n}\r\n#quests .right {\r\n  width: 60%;\r\n}\r\n\r\n.quest-list, .quest-item {\r\n  list-style: none;\r\n}\r\n\r\n.quest-list {\r\n  padding: 0;\r\n}\r\n\r\n.quest-list:empty {\r\n  background: #c4c4ff;\r\n  padding: 0.4em;\r\n}\r\n\r\n.quest-item {\r\n  margin: 0 0 5px 5px;\r\n}\r\n.quest-item.selected > .quest-text {\r\n  font-weight: bold;\r\n}\r\n.quest-item.selected > .quest-text::before {\r\n  content: \"▶\t \";\r\n}\r\n\r\n.quest-text {\r\n  display: inline-block;\r\n  padding: 0.2em;\r\n  user-select: none;\r\n}\r\n\r\n.quest-item {\r\n  border-left: 2px solid #0000c4;\r\n}\r\n.quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n";
 
-  var html = "<div id=\"quests\">\r\n  <div class=\"left\">\r\n    <button class=\"button is-small is-primary\">New Quest</button>\r\n\r\n    <ol class=\"quest-list\"></ol>\r\n  </div>\r\n\r\n  <div class=\"right\">\r\n    <div class=\"field\">\r\n      <label class=\"label\">Name</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" data-for=\"name\">\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">Description</label>\r\n      <div class=\"control\">\r\n        <textarea class=\"textarea\" data-for=\"description\"></textarea>\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">XP</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" type=\"number\" data-for=\"xp\">\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">Completion code</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" data-for=\"code\">\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"field\">\r\n      <div class=\"control\">\r\n        <button class=\"button is-danger\">Delete</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
+  var html = "<div id=\"quests\">\r\n  <div class=\"left\">\r\n    <button class=\"button is-small is-primary\">New Quest</button>\r\n\r\n    <ol class=\"quest-list\"></ol>\r\n  </div>\r\n\r\n  <div class=\"right\">\r\n    <div class=\"field\">\r\n      <label class=\"label\">Name</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" data-for=\"name\">\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">Description</label>\r\n      <div class=\"control\">\r\n        <textarea class=\"textarea\" data-for=\"description\"></textarea>\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">XP</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" type=\"number\" data-for=\"xp\">\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">Completion code</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" data-for=\"code\">\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">Completion message</label>\r\n      <div class=\"control\">\r\n        <textarea class=\"textarea\" data-for=\"complete\"></textarea>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"field\">\r\n      <div class=\"control\">\r\n        <button class=\"button is-danger\">Delete</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
 
   var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -939,7 +939,7 @@
               const id = this.getNewId();
               const code = Math.random().toString(16).slice(2, 8);
               this.setList(this.getList().concat([{ id, children: [] }]));
-              this.setQuests(this.getQuests().concat([{ id, name: 'Quest', description: '', code, xp: 1 }]));
+              this.setQuests(this.getQuests().concat([{ id, name: 'Quest', description: '', code, xp: 1, completeMessage: '' }]));
               this.rebuildList();
           });
       }
@@ -993,18 +993,21 @@
           getInput('[data-for=description]').value = quest ? quest.description : '';
           getInput('[data-for=code]').value = quest ? quest.code : '';
           getInput('[data-for=xp]').value = quest ? quest.xp.toString() : '';
+          getInput('[data-for=complete]').value = quest ? quest.completeMessage : '';
       }
       save() {
+          const getValue = (sel) => this.container.querySelector(sel).value;
           const index = this.getQuests().findIndex(q => q.id === this.selectedIdPath[this.selectedIdPath.length - 1]);
           if (index !== -1) {
               const quests = this.getQuests();
               const quest = quests[index];
-              const nameEl = this.container.querySelector('[data-for=name]');
-              quest.code = this.container.querySelector('[data-for=code]').value;
-              quest.description = this.container.querySelector('[data-for=description]').value;
-              quest.xp = +this.container.querySelector('[data-for=xp]').value;
-              if (nameEl.value !== quest.name) {
-                  quest.name = nameEl.value;
+              const name = getValue('[data-for=name]');
+              quest.code = getValue('[data-for=code]');
+              quest.description = getValue('[data-for=description]');
+              quest.xp = +getValue('[data-for=xp]');
+              quest.completeMessage = getValue('[data-for=complete]');
+              if (name !== quest.name) {
+                  quest.name = name;
                   this.ex.storage.set('quests', quests);
                   this.rebuildList();
               }
@@ -1035,16 +1038,73 @@
       }
   }
 
+  var html$2 = "<div class=\"container\">\r\n  <h3 class=\"title\">User Management</h3>\r\n  <p>Use this tab to set up players as Quest Masters and quickly look at individual players.</p>\r\n  <br>\r\n  <div class=\"field has-addons\">\r\n    <div class=\"control\">\r\n      <input class=\"input\" placeholder=\"Filter\">\r\n    </div>\r\n    <div class=\"control\">\r\n      <a class=\"button is-primary\">Refresh List</a>\r\n    </div>\r\n  </div>\r\n  <ol></ol>\r\n</div>\r\n";
+
+  const KEY = 'users';
+  const INVALID_NAME = 'QUESTS_INVALID_NAME';
+  const INVALID_USER = { xp: -Infinity, completed: [], questmaster: false };
+  class UsersTab {
+      constructor(container, ex) {
+          this.getUsers = () => this.ex.storage.get(KEY, { [INVALID_NAME]: INVALID_USER });
+          this.setUsers = (users) => {
+              users[INVALID_NAME] = INVALID_USER;
+              this.ex.storage.set(KEY, users);
+          };
+          this.getUser = (name) => this.getUsers()[name] || this.getUser(INVALID_NAME);
+          this.container = container;
+          this.ex = ex;
+          container.innerHTML = html$2;
+          this.resultsEl = container.querySelector('ol');
+          const input = container.querySelector('input');
+          input.addEventListener('input', () => this.filter(input.value));
+          container.querySelector('.button').addEventListener('click', () => {
+              this.rebuildList();
+          });
+          this.rebuildList();
+          container.addEventListener('change', event => {
+              const target = event.target;
+              if (target.type === 'checkbox') {
+                  const name = target.parentElement.querySelector('span').textContent;
+                  const users = this.getUsers();
+                  users[name].questmaster = target.checked;
+                  this.setUsers(users);
+              }
+          });
+      }
+      filter(search) {
+          search = search.toLocaleUpperCase();
+          this.resultsEl.querySelectorAll('li').forEach(el => {
+              const name = el.querySelector('span').textContent;
+              el.style.display = name.includes(search) ? '' : 'none';
+          });
+      }
+      rebuildList() {
+          this.resultsEl.innerHTML = '';
+          Object.keys(this.getUsers())
+              .filter(name => name !== INVALID_NAME)
+              .forEach(name => {
+              const li = this.resultsEl.appendChild(document.createElement('li'));
+              const span = li.appendChild(document.createElement('span'));
+              span.textContent = name;
+              const label = li.appendChild(document.createElement('label'));
+              label.appendChild(document.createTextNode(' Quest Master: '));
+              const checkbox = label.appendChild(document.createElement('input'));
+              checkbox.type = 'checkbox';
+              checkbox.checked = this.getUser(name).questmaster;
+          });
+      }
+  }
+
   document.head.appendChild(document.createElement('style')).textContent = css;
   const TAB_GROUP = 'quests';
   bot.MessageBot.registerExtension('bibliofile/quests', ex => {
-      console.log('Launching quests...');
       const ui = ex.bot.getExports('ui');
       if (!ui)
           return;
       ui.addTabGroup('Quests', TAB_GROUP);
       const infoTab = new InfoTab(ui.addTab('Info', TAB_GROUP));
       const questsTab = new QuestsTab(ex, ui, ui.addTab('Quests', TAB_GROUP));
+      const usersTab = new UsersTab(ui.addTab('Users', TAB_GROUP), ex);
       ex.remove = () => {
           ui.removeTabGroup(TAB_GROUP);
       };

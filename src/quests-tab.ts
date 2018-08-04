@@ -54,7 +54,7 @@ export class QuestsTab {
       const id = this.getNewId()
       const code = Math.random().toString(16).slice(2, 8)
       this.setList(this.getList().concat([{ id, children: [] }]))
-      this.setQuests(this.getQuests().concat([{ id, name: 'Quest', description: '', code, xp: 1 }]))
+      this.setQuests(this.getQuests().concat([{ id, name: 'Quest', description: '', code, xp: 1, completeMessage: '' }]))
       this.rebuildList()
     })
   }
@@ -149,19 +149,23 @@ export class QuestsTab {
     getInput('[data-for=description]').value = quest ? quest.description : ''
     getInput('[data-for=code]').value = quest ? quest.code : ''
     getInput('[data-for=xp]').value = quest ? quest.xp.toString() : ''
+    getInput('[data-for=complete]').value = quest ? quest.completeMessage : ''
   }
 
   save () {
+    const getValue = (sel: string) => this.container.querySelector<HTMLInputElement>(sel)!.value
+
     const index = this.getQuests().findIndex(q => q.id === this.selectedIdPath[this.selectedIdPath.length - 1])
     if (index !== -1) {
       const quests = this.getQuests()
       const quest = quests[index]
-      const nameEl = this.container.querySelector<HTMLInputElement>('[data-for=name]')!
-      quest.code = this.container.querySelector<HTMLInputElement>('[data-for=code]')!.value
-      quest.description = this.container.querySelector<HTMLTextAreaElement>('[data-for=description]')!.value
-      quest.xp = +this.container.querySelector<HTMLInputElement>('[data-for=xp]')!.value
-      if (nameEl.value !== quest.name) {
-        quest.name = nameEl.value
+      const name = getValue('[data-for=name]')
+      quest.code = getValue('[data-for=code]')
+      quest.description = getValue('[data-for=description]')
+      quest.xp = +getValue('[data-for=xp]')
+      quest.completeMessage = getValue('[data-for=complete]')
+      if (name !== quest.name) {
+        quest.name = name
         this.ex.storage.set('quests', quests)
         this.rebuildList()
       } else {
