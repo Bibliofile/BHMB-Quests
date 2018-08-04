@@ -1059,12 +1059,13 @@
           input.addEventListener('input', () => this.filter(input.value));
           container.querySelector('.button').addEventListener('click', () => {
               this.rebuildList();
+              this.filter(input.value);
           });
           this.rebuildList();
           container.addEventListener('change', event => {
               const target = event.target;
               if (target.type === 'checkbox') {
-                  const name = target.parentElement.querySelector('span').textContent;
+                  const name = target.parentElement.parentElement.querySelector('span').textContent;
                   const users = this.getUsers();
                   users[name].questmaster = target.checked;
                   this.setUsers(users);
@@ -1080,17 +1081,20 @@
       }
       rebuildList() {
           this.resultsEl.innerHTML = '';
-          Object.keys(this.getUsers())
+          const users = this.getUsers();
+          Object.keys(users)
               .filter(name => name !== INVALID_NAME)
+              .sort((a, b) => users[b].xp - users[a].xp)
               .forEach(name => {
               const li = this.resultsEl.appendChild(document.createElement('li'));
               const span = li.appendChild(document.createElement('span'));
               span.textContent = name;
+              li.appendChild(document.createTextNode(` (xp: ${users[name].xp})`));
               const label = li.appendChild(document.createElement('label'));
               label.appendChild(document.createTextNode(' Quest Master: '));
               const checkbox = label.appendChild(document.createElement('input'));
               checkbox.type = 'checkbox';
-              checkbox.checked = this.getUser(name).questmaster;
+              checkbox.checked = users[name].questmaster;
           });
       }
   }
