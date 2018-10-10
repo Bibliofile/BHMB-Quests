@@ -51,3 +51,11 @@ $header-height: 52px
     $sel: if($i == 1, ".quest-item", selector-nest($sel, ".quest-item"))
     #{$sel}
       border-color: if($i % 2 == 0, $blue, $red)
+
+#quests_levels
+  .is-add-button
+    position: fixed
+    left: 1em
+    z-index: 10
+  .drag::after
+    content: " \2261"

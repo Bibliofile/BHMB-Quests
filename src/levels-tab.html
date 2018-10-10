@@ -1,0 +1,37 @@
+<template>
+  <div class="box">
+    <div class="columns">
+      <div class="column is-narrow is-hidden-touch">
+        <span class="drag"></span>
+      </div>
+      <div class="column is-narrow">
+        <p class="has-text-weight-bold">Title</p>
+      </div>
+      <div class="column">
+        <input class="input is-small is-fluid" data-target="title">
+      </div>
+      <div class="column is-narrow">
+        <p class="has-text-weight-bold">XP</p>
+      </div>
+      <div class="column">
+        <input type="number" class="input is-small is-fluid" data-target="xp">
+      </div>
+      <div class="column is-narrow">
+        <p class="has-text-weight-bold">Level up message</p>
+      </div>
+      <div class="column">
+        <textarea class="textarea is-small is-fluid" data-target="message"></textarea>
+      </div>
+      <div class="column is-narrow">
+        <button class="button is-small is-danger is-outlined" data-do="delete">Delete</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<div class="container" id="quests_levels">
+  <section class="section is-small">
+    <button class="button is-primary is-add-button" title="Add level">+</button>
+  </section>
+  <div class="list"></div>
+</div>

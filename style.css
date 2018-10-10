@@ -140,3 +140,12 @@
 .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {
   border-color: #0000c4;
 }
+
+#quests_levels .is-add-button {
+  position: fixed;
+  left: 1em;
+  z-index: 10;
+}
+#quests_levels .drag::after {
+  content: " ≡";
+}
