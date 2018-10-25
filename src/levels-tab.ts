@@ -11,6 +11,8 @@ export interface Level {
 
 const SAVE_KEY = 'levels'
 
+export const getLevels = (ex: MessageBotExtension) => ex.storage.get<Level[]>(SAVE_KEY, [])
+
 export function levelsTab (ex: MessageBotExtension, ui: UIExtensionExports, container: HTMLElement) {
   container.innerHTML = html
   const template = container.querySelector('template')!

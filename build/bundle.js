@@ -6,7 +6,7 @@
 
   var css = "@charset \"UTF-8\";\r\n#quests {\r\n  display: flex;\r\n}\r\n#quests .left, #quests .right {\r\n  padding: 5px;\r\n  width: 40%;\r\n  height: calc(100vh - 62px);\r\n  overflow: auto;\r\n}\r\n#quests .left {\r\n  width: 40%;\r\n}\r\n#quests .left .button {\r\n  width: 100%;\r\n}\r\n#quests .right {\r\n  width: 60%;\r\n}\r\n\r\n.quest-list, .quest-item {\r\n  list-style: none;\r\n}\r\n\r\n.quest-list {\r\n  padding: 0;\r\n}\r\n\r\n.quest-list:empty {\r\n  background: #c4c4ff;\r\n  padding: 0.4em;\r\n}\r\n\r\n.quest-item {\r\n  margin: 0 0 5px 5px;\r\n}\r\n.quest-item.selected > .quest-text {\r\n  font-weight: bold;\r\n}\r\n.quest-item.selected > .quest-text::before {\r\n  content: \"▶\t \";\r\n}\r\n\r\n.quest-text {\r\n  display: inline-block;\r\n  padding: 0.2em;\r\n  user-select: none;\r\n}\r\n\r\n.quest-item {\r\n  border-left: 2px solid #0000c4;\r\n}\r\n.quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #c40000;\r\n}\r\n.quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item .quest-item {\r\n  border-color: #0000c4;\r\n}\r\n\r\n#quests_levels .is-add-button {\r\n  position: fixed;\r\n  left: 1em;\r\n  z-index: 10;\r\n}\r\n#quests_levels .drag::after {\r\n  content: \" ≡\";\r\n}\r\n";
 
-  var html = "<div id=\"quests\">\r\n  <div class=\"left\">\r\n    <button class=\"button is-small is-primary\">New Quest</button>\r\n\r\n    <ol class=\"quest-list\"></ol>\r\n  </div>\r\n\r\n  <div class=\"right\">\r\n    <div class=\"field\">\r\n      <label class=\"label\">Name</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" data-for=\"name\">\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">Description</label>\r\n      <div class=\"control\">\r\n        <textarea class=\"textarea\" data-for=\"description\"></textarea>\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">XP</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" type=\"number\" data-for=\"xp\">\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">Completion code</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" data-for=\"code\">\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">Completion message</label>\r\n      <div class=\"control\">\r\n        <textarea class=\"textarea\" data-for=\"complete\"></textarea>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"field\">\r\n      <div class=\"control\">\r\n        <button class=\"button is-danger\">Delete</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
+  var html = "<div id=\"quests\">\r\n  <div class=\"left\">\r\n    <button class=\"button is-small is-primary\">New Quest</button>\r\n\r\n    <ol class=\"quest-list\"></ol>\r\n  </div>\r\n\r\n  <div class=\"right\">\r\n    <div class=\"field\">\r\n      <label class=\"label\">Name</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" data-for=\"name\">\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">Description</label>\r\n      <div class=\"control\">\r\n        <textarea class=\"textarea\" data-for=\"description\"></textarea>\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">XP</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" type=\"number\" min=\"0\" data-for=\"xp\">\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">Completion code</label>\r\n      <div class=\"control\">\r\n        <input class=\"input\" data-for=\"code\">\r\n      </div>\r\n    </div>\r\n    <div class=\"field\">\r\n      <label class=\"label\">Completion message</label>\r\n      <div class=\"control\">\r\n        <textarea class=\"textarea\" data-for=\"complete\"></textarea>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"field\">\r\n      <div class=\"control\">\r\n        <button class=\"button is-danger\">Delete</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
 
   var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -886,12 +886,18 @@
           return carry.concat([child.id], child.children.reduce(getIds, []));
       }, []);
   }
+  function getQuests(ex) {
+      return ex.storage.get('quests', defaultQuests);
+  }
+  function getList(ex) {
+      return ex.storage.get('order', defaultQuestOrder);
+  }
   class QuestsTab {
       constructor(ex, ui, container) {
           this.selectedIdPath = [];
-          this.getQuests = () => this.ex.storage.get('quests', defaultQuests);
+          this.getQuests = () => getQuests(this.ex);
           this.setQuests = (quests) => this.ex.storage.set('quests', quests);
-          this.getList = () => this.ex.storage.get('order', defaultQuestOrder);
+          this.getList = () => getList(this.ex);
           this.setList = (list) => this.ex.storage.set('order', list);
           this.getNewId = () => {
               const id = this.ex.storage.get('quest_id', 1);
@@ -1030,7 +1036,7 @@
       }
   }
 
-  var html$1 = "<div id=\"quests_info\" class=\"container\">\r\n  <h3 class=\"title\">Quests</h3>\r\n  <p>Use quests to reward players for completing tasks on your server automatically.</p>\r\n\r\n  <article class=\"message is-warning\">\r\n    <div class=\"message-header\">\r\n      <p>Setup notes</p>\r\n    </div>\r\n    <div class=\"message-body\">\r\n      <ul>\r\n        <li>You can change quest codes without letting users complete the quest again.</li>\r\n        <li>If you re-order quests, users that have already completed a quest that they now cannot access will still have completed the quest.</li>\r\n        <li>You can technically have multiple quests with the same completion code, but this will be confusing to both you and your users and is not recommended.</li>\r\n      </ul>\r\n    </div>\r\n  </article>\r\n\r\n  <h3 class=\"title\">Levels</h3>\r\n  <p>When users gain enough XP to get a level, the level up message will be sent. If you change how much XP users need to achieve a level, players levels will change to reflect the new requirement. Each level's XP field is how much XP is required to level up from the previous level.</p>\r\n\r\n  <h3 class=\"title\">Commands</h3>\r\n\r\n  <ul>\r\n    <li>/QUESTS - List up to 5 incomplete quests</li>\r\n    <li>/QUEST &lt;title&gt; - Get details about a quest. If no title is provided, this will act like /QUESTS</li>\r\n    <li>/CODE &lt;code&gt; - Claim XP for completing a quest</li>\r\n    <li>/LEVEL - Check your current level</li>\r\n    <li>/LEVELTOP - List the top 10 players with the most XP</li>\r\n    <li>/XP &lt;amount&gt; (Quest Master only) - Add or remove XP from a player</li>\r\n    <li>/LEVEL &lt;name&gt; (Quest Master only) - Check the current level of a player</li>\r\n  </ul>\r\n</div>\r\n";
+  var html$1 = "<div id=\"quests_info\" class=\"container\">\r\n  <h3 class=\"title\">Quests</h3>\r\n  <p>Use quests to reward players for completing tasks on your server automatically.</p>\r\n\r\n  <article class=\"message is-warning\">\r\n    <div class=\"message-header\">\r\n      <p>Setup notes</p>\r\n    </div>\r\n    <div class=\"message-body\">\r\n      <ul>\r\n        <li>You can change quest codes without letting users complete the quest again.</li>\r\n        <li>If you re-order quests, users that have already completed a quest that they now cannot access will still have completed the quest.</li>\r\n        <li>You can technically have multiple quests with the same completion code, but this will be confusing to both you and your users and is not recommended.</li>\r\n      </ul>\r\n    </div>\r\n  </article>\r\n\r\n  <h3 class=\"title\">Levels</h3>\r\n  <p>When users gain enough XP to get a level, the level up message will be sent. If you change how much XP users need to achieve a level, players levels will change to reflect the new requirement. Each level's XP field is how much XP is required to level up from the previous level.</p>\r\n\r\n  <h3 class=\"title\">Commands</h3>\r\n\r\n  <ul>\r\n    <li>/QUESTS - List up to 5 incomplete quests</li>\r\n    <li>/QUEST &lt;title&gt; - Get details about a quest. If no title is provided, this will act like /QUESTS</li>\r\n    <li>/CODE &lt;code&gt; - Claim XP for completing a quest</li>\r\n    <li>/LEVEL - Check your current level</li>\r\n    <li>/LEVELTOP - List the top 10 players with the most XP</li>\r\n    <li>/XP &lt;name&gt; &lt;amount&gt; (Quest Master only) - Add or remove XP from a player</li>\r\n    <li>/LEVEL &lt;name&gt; (Quest Master only) - Check the current level of a player</li>\r\n  </ul>\r\n</div>\r\n";
 
   class InfoTab {
       constructor(container) {
@@ -1040,17 +1046,21 @@
 
   var html$2 = "<div class=\"container\">\r\n  <h3 class=\"title\">User Management</h3>\r\n  <p>Use this tab to set up players as Quest Masters and quickly look at individual players.</p>\r\n  <br>\r\n  <div class=\"field has-addons\">\r\n    <div class=\"control\">\r\n      <input class=\"input\" placeholder=\"Filter\">\r\n    </div>\r\n    <div class=\"control\">\r\n      <a class=\"button is-primary\">Refresh List</a>\r\n    </div>\r\n  </div>\r\n  <ol></ol>\r\n</div>\r\n";
 
-  const KEY = 'users';
+  const USERS_SAVE_KEY = 'users';
   const INVALID_NAME = 'QUESTS_INVALID_NAME';
   const INVALID_USER = { xp: -Infinity, completed: [], questmaster: false };
+  const getUsers = (ex) => {
+      const users = ex.storage.get(USERS_SAVE_KEY, {});
+      users[INVALID_NAME] = INVALID_USER; // Don't do this in the default as JSON.parse doesn't handle -Infinity
+      return users;
+  };
+  const setUsers = (ex, users) => {
+      users[INVALID_NAME] = Object.assign({}, INVALID_USER, { completed: [] });
+      ex.storage.set(USERS_SAVE_KEY, users);
+  };
+  const getUser = (ex, name) => getUsers(ex)[name] || getUser(ex, INVALID_NAME);
   class UsersTab {
       constructor(container, ex) {
-          this.getUsers = () => this.ex.storage.get(KEY, { [INVALID_NAME]: INVALID_USER });
-          this.setUsers = (users) => {
-              users[INVALID_NAME] = INVALID_USER;
-              this.ex.storage.set(KEY, users);
-          };
-          this.getUser = (name) => this.getUsers()[name] || this.getUser(INVALID_NAME);
           this.container = container;
           this.ex = ex;
           container.innerHTML = html$2;
@@ -1066,9 +1076,9 @@
               const target = event.target;
               if (target.type === 'checkbox') {
                   const name = target.parentElement.parentElement.querySelector('span').textContent;
-                  const users = this.getUsers();
+                  const users = getUsers(this.ex);
                   users[name].questmaster = target.checked;
-                  this.setUsers(users);
+                  setUsers(this.ex, users);
               }
           });
       }
@@ -1081,7 +1091,7 @@
       }
       rebuildList() {
           this.resultsEl.innerHTML = '';
-          const users = this.getUsers();
+          const users = getUsers(this.ex);
           Object.keys(users)
               .filter(name => name !== INVALID_NAME)
               .sort((a, b) => users[b].xp - users[a].xp)
@@ -1101,10 +1111,10 @@
 
   var html$3 = "<div class=\"container\">\r\n  <h3 class=\"title\">Log</h3>\r\n  <p>Use this tab to audit XP gains to catch cheaters.</p>\r\n  <br>\r\n  <div class=\"field has-addons\">\r\n    <div class=\"control\">\r\n      <input class=\"input\" placeholder=\"Filter by name\">\r\n    </div>\r\n    <div class=\"control\">\r\n      <a class=\"button is-primary\">Refresh List</a>\r\n    </div>\r\n    <div class=\"control\">\r\n      <a class=\"button is-danger\">Clear log</a>\r\n    </div>\r\n  </div>\r\n  <ol></ol>\r\n</div>\r\n";
 
-  const KEY$1 = 'log';
+  const KEY = 'log';
   class LogTab {
       constructor(container, ex) {
-          this.getLogs = () => this.ex.storage.get(KEY$1, []);
+          this.getLogs = () => this.ex.storage.get(KEY, []);
           this.container = container;
           this.ex = ex;
           container.innerHTML = html$3;
@@ -1116,7 +1126,7 @@
               this.filter(input.value);
           });
           container.querySelector('.is-danger').addEventListener('click', () => {
-              this.ex.storage.set(KEY$1, []);
+              this.ex.storage.set(KEY, []);
               this.refreshList();
           });
       }
@@ -1141,6 +1151,7 @@
   var html$4 = "<template>\r\n  <div class=\"box\">\r\n    <div class=\"columns\">\r\n      <div class=\"column is-narrow is-hidden-touch\">\r\n        <span class=\"drag\"></span>\r\n      </div>\r\n      <div class=\"column is-narrow\">\r\n        <p class=\"has-text-weight-bold\">Title</p>\r\n      </div>\r\n      <div class=\"column\">\r\n        <input class=\"input is-small is-fluid\" data-target=\"title\">\r\n      </div>\r\n      <div class=\"column is-narrow\">\r\n        <p class=\"has-text-weight-bold\">XP</p>\r\n      </div>\r\n      <div class=\"column\">\r\n        <input type=\"number\" class=\"input is-small is-fluid\" data-target=\"xp\">\r\n      </div>\r\n      <div class=\"column is-narrow\">\r\n        <p class=\"has-text-weight-bold\">Level up message</p>\r\n      </div>\r\n      <div class=\"column\">\r\n        <textarea class=\"textarea is-small is-fluid\" data-target=\"message\"></textarea>\r\n      </div>\r\n      <div class=\"column is-narrow\">\r\n        <button class=\"button is-small is-danger is-outlined\" data-do=\"delete\">Delete</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<div class=\"container\" id=\"quests_levels\">\r\n  <section class=\"section is-small\">\r\n    <button class=\"button is-primary is-add-button\" title=\"Add level\">+</button>\r\n  </section>\r\n  <div class=\"list\"></div>\r\n</div>\r\n";
 
   const SAVE_KEY = 'levels';
+  const getLevels = (ex) => ex.storage.get(SAVE_KEY, []);
   function levelsTab(ex, ui, container) {
       container.innerHTML = html$4;
       const template = container.querySelector('template');
@@ -1182,9 +1193,184 @@
       container.addEventListener('change', rebuildLevelList);
   }
 
+  const match = (r, s) => (s.match(r) || []).slice(1);
+  function getAvailableQuests(ex, completed) {
+      const list = getList(ex);
+      const available = [];
+      while (list.length) {
+          const quest = list.shift();
+          if (completed.includes(quest.id)) {
+              list.unshift(...quest.children);
+          }
+          else {
+              available.push(quest);
+          }
+      }
+      return available;
+  }
+  function checkLevelUp(ex, userXP, xpGain, name) {
+      const levels = getLevels(ex);
+      while (levels.length && levels[0].xp <= userXP) {
+          userXP -= levels[0].xp;
+          levels.shift();
+      }
+      while (levels.length && levels[0].xp < userXP + xpGain) {
+          xpGain -= levels[0].xp - userXP;
+          userXP = 0;
+          if (levels[0].onLevelUp) {
+              ex.bot.send(levels[0].onLevelUp, { name });
+              levels.shift();
+          }
+      }
+  }
+  function displayQuests(ex, name) {
+      const user = getUser(ex, name);
+      const quests = getQuests(ex);
+      const available = getAvailableQuests(ex, user.completed);
+      if (available.length === 0) {
+          ex.bot.send('No available quests.');
+          return;
+      }
+      const message = ['Available quests:'];
+      for (let i = 0; i < Math.min(5, available.length); i++) {
+          const quest = quests.find(q => q.id === available[i].id);
+          message.push(`${quest.name} (${quest.xp} xp)`);
+      }
+      ex.bot.send(message.join('\n'));
+  }
+  function addCommands(ex, world) {
+      world.addCommand('xp', (player, args) => {
+          const users = getUsers(ex);
+          const sender = getUser(ex, player.name);
+          if (!player.isOwner && !sender.questmaster)
+              return;
+          const [name = '', amount = '0'] = match(/^(.*?) ([+-]?\d+)$/, args);
+          const normalizedName = name.toLocaleUpperCase();
+          const numericAmount = parseInt(amount, 10);
+          // Player hasn't completed any quests
+          if (!users[normalizedName]) {
+              return ex.bot.send(`Cannot modify xp of <${normalizedName}>, no quests have been completed.`);
+          }
+          if (numericAmount < 0) {
+              // xp cannot be negative
+              users[normalizedName].xp = Math.min(0, users[normalizedName].xp - numericAmount);
+          }
+          else {
+              checkLevelUp(ex, users[normalizedName].xp, numericAmount, normalizedName);
+              const willOverflow = Number.MAX_SAFE_INTEGER - numericAmount < users[normalizedName].xp;
+              users[normalizedName].xp = willOverflow ? Number.MAX_SAFE_INTEGER : users[normalizedName].xp + numericAmount;
+          }
+          setUsers(ex, users);
+          ex.bot.send(`Updated ${normalizedName}'s xp to ${users[normalizedName].xp}`);
+      });
+      world.addCommand('quests', ({ name }) => displayQuests(ex, name));
+      world.addCommand('quest', ({ name }, questName) => {
+          if (!questName) {
+              return displayQuests(ex, name);
+          }
+          const quest = getQuests(ex).find(q => q.name.toLocaleUpperCase() === questName.toLocaleUpperCase());
+          if (!quest) {
+              ex.bot.send(`That quest doesn't exist.`);
+              return;
+          }
+          const { completed } = getUser(ex, name);
+          if (completed.includes(quest.id)) {
+              ex.bot.send(`You have already completed that quest.`);
+              return;
+          }
+          const available = getAvailableQuests(ex, completed);
+          if (available.some(({ id }) => id === quest.id)) {
+              ex.bot.send(quest.description);
+          }
+          else {
+              ex.bot.send(`You haven't unlocked that quest yet.`);
+          }
+      });
+      world.addCommand('code', ({ name }, code) => {
+          const users = getUsers(ex);
+          if (!users[name]) {
+              users[name] = {
+                  completed: [],
+                  xp: 0,
+                  questmaster: false
+              };
+          }
+          const quest = getQuests(ex).find(q => q.code === code);
+          if (!quest) {
+              ex.bot.send(`No quest with that code exists.`);
+              return;
+          }
+          const available = getAvailableQuests(ex, users[name].completed);
+          if (!available.some(q => q.id === quest.id)) {
+              ex.bot.send(`You can't complete that quest.`);
+              return;
+          }
+          checkLevelUp(ex, users[name].xp, quest.xp, name);
+          const willOverflow = Number.MAX_SAFE_INTEGER - quest.xp < users[name].xp;
+          users[name].xp = willOverflow ? Number.MAX_SAFE_INTEGER : users[name].xp + quest.xp;
+          users[name].completed.push(quest.id);
+          setUsers(ex, users);
+          const message = quest.completeMessage || `Quest complete! Gained {{xp}} xp.`;
+          ex.bot.send(message, {
+              xp: quest.xp.toString(),
+              title: quest.name,
+              description: quest.description,
+              name
+          });
+      });
+      world.addCommand('level', ({ name, isOwner }, target) => {
+          const levels = getLevels(ex);
+          let user = getUser(ex, name);
+          if ((isOwner || user.questmaster) && target) {
+              user = Object.assign({}, getUser(ex, target.toLocaleUpperCase()));
+              user.xp = Math.max(user.xp, 0); // In case the user doesn't exist
+              name = target.toLocaleUpperCase();
+          }
+          let xp = user.xp;
+          let currentLevel = levels[0];
+          while (levels.length && levels[0].xp <= xp) {
+              xp -= levels[0].xp;
+              currentLevel = levels.shift();
+          }
+          if (currentLevel) {
+              ex.bot.send(` {{Name}}'s level: {{title}}\nxp: {{xp}}`, {
+                  name,
+                  title: currentLevel.title,
+                  xp: user.xp.toString()
+              });
+          }
+      });
+      world.addCommand('leveltop', () => {
+          const users = getUsers(ex);
+          const top = Object.keys(users)
+              .sort((a, b) => users[b].xp - users[a].xp)
+              .slice(0, 10) // Todo: #1
+              .filter(name => name !== INVALID_NAME);
+          const lines = ['Top Players:'];
+          for (const name of top) {
+              lines.push(`${name} - ${users[name].xp} xp`);
+          }
+          ex.bot.send(lines.join('\n'));
+      });
+  }
+  function removeCommands(world) {
+      const commands = [
+          'xp',
+          'quests',
+          'quest',
+          'code',
+          'leveltop'
+      ];
+      for (const command of commands) {
+          world.removeCommand(command);
+      }
+  }
+
   document.head.appendChild(document.createElement('style')).textContent = css;
   const TAB_GROUP = 'quests';
-  bot.MessageBot.registerExtension('bibliofile/quests', ex => {
+  bot.MessageBot.registerExtension('bibliofile/quests', (ex, world) => {
+      addCommands(ex, world);
+      ex.remove = () => removeCommands(world);
       const ui = ex.bot.getExports('ui');
       if (!ui)
           return;
@@ -1196,6 +1382,7 @@
       const logTab = new LogTab(ui.addTab('Log', TAB_GROUP), ex);
       ex.remove = () => {
           ui.removeTabGroup(TAB_GROUP);
+          removeCommands(world);
       };
   });
 

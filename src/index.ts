@@ -8,11 +8,15 @@ import { InfoTab } from './info-tab'
 import { UsersTab } from './users-tab'
 import { LogTab } from './log-tab'
 import { levelsTab } from './levels-tab'
+import { addCommands, removeCommands } from './commands'
 document.head.appendChild(document.createElement('style')).textContent = css
 
 const TAB_GROUP = 'quests'
 
-MessageBot.registerExtension('bibliofile/quests', ex => {
+MessageBot.registerExtension('bibliofile/quests', (ex, world) => {
+  addCommands(ex, world)
+  ex.remove = () => removeCommands(world)
+
   const ui = ex.bot.getExports('ui') as UIExtensionExports | undefined
   if (!ui) return
 
@@ -26,5 +30,6 @@ MessageBot.registerExtension('bibliofile/quests', ex => {
 
   ex.remove = () => {
     ui.removeTabGroup(TAB_GROUP)
+    removeCommands(world)
   }
 })

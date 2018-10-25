@@ -14,10 +14,18 @@ function createEl<K extends keyof HTMLElementTagNameMap>
   return parent.appendChild(el)
 }
 
-function getDescendentIds (quest: QuestListing): number[] {
+export function getDescendentIds (quest: QuestListing): number[] {
   return quest.children.reduce<number[]>(function getIds (carry, child): number[] {
     return carry.concat([child.id], child.children.reduce(getIds, []))
   }, [])
+}
+
+export function getQuests (ex: MessageBotExtension) {
+  return ex.storage.get('quests', defaultQuests)
+}
+
+export function getList (ex: MessageBotExtension) {
+  return ex.storage.get('order', defaultQuestOrder)
 }
 
 export class QuestsTab {
@@ -59,9 +67,9 @@ export class QuestsTab {
     })
   }
 
-  private getQuests = () => this.ex.storage.get('quests', defaultQuests)
+  private getQuests = () => getQuests(this.ex)
   private setQuests = (quests: Quest[]) => this.ex.storage.set('quests', quests)
-  private getList = () => this.ex.storage.get('order', defaultQuestOrder)
+  private getList = () => getList(this.ex)
   private setList = (list: QuestList) => this.ex.storage.set('order', list)
   private getNewId = () => {
     const id = this.ex.storage.get('quest_id', 1)

@@ -1,9 +1,19 @@
 import { MessageBotExtension } from '@bhmb/bot'
 import html from './users-tab.html'
 
-const KEY = 'users'
-const INVALID_NAME = 'QUESTS_INVALID_NAME'
-const INVALID_USER = { xp: -Infinity, completed: [], questmaster: false }
+export const USERS_SAVE_KEY = 'users'
+export const INVALID_NAME = 'QUESTS_INVALID_NAME'
+const INVALID_USER: User = { xp: -Infinity, completed: [], questmaster: false }
+export const getUsers = (ex: MessageBotExtension) => {
+  const users = ex.storage.get<Users>(USERS_SAVE_KEY, { })
+  users[INVALID_NAME] = INVALID_USER // Don't do this in the default as JSON.parse doesn't handle -Infinity
+  return users
+}
+export const setUsers = (ex: MessageBotExtension, users: Users) => {
+  users[INVALID_NAME] = { ...INVALID_USER, completed: [] }
+  ex.storage.set(USERS_SAVE_KEY, users)
+}
+export const getUser = (ex: MessageBotExtension, name: string): User => getUsers(ex)[name] || getUser(ex, INVALID_NAME)
 
 export interface User {
   xp: number
@@ -39,19 +49,12 @@ export class UsersTab {
       const target = event.target as HTMLInputElement
       if (target.type === 'checkbox') {
         const name = target.parentElement!.parentElement!.querySelector('span')!.textContent!
-        const users = this.getUsers()
+        const users = getUsers(this.ex)
         users[name].questmaster = target.checked
-        this.setUsers(users)
+        setUsers(this.ex, users)
       }
     })
   }
-
-  getUsers = () => this.ex.storage.get<Users>(KEY, { [INVALID_NAME]: INVALID_USER })
-  setUsers = (users: Users) => {
-    users[INVALID_NAME] = INVALID_USER
-    this.ex.storage.set(KEY, users)
-  }
-  getUser = (name: string): User => this.getUsers()[name] || this.getUser(INVALID_NAME)
 
   filter (search: string) {
     search = search.toLocaleUpperCase()
@@ -64,7 +67,7 @@ export class UsersTab {
 
   rebuildList () {
     this.resultsEl.innerHTML = ''
-    const users = this.getUsers()
+    const users = getUsers(this.ex)
 
     Object.keys(users)
       .filter(name => name !== INVALID_NAME)
