@@ -171,7 +171,7 @@ export function addCommands (ex: MessageBotExtension, world: World) {
       ex.bot.send(` {{Name}}'s level: {{title}}\nxp: {{xp}}`, {
         name,
         title: currentLevel.title,
-        xp: user.xp.toString()
+        xp: Math.max(user.xp, 0).toString()
       })
     }
   })
