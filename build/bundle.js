@@ -1295,14 +1295,18 @@
                   questmaster: false
               };
           }
-          const quest = getQuests(ex).find(q => q.code === code);
+          const quest = getQuests(ex).find(q => q.code.toLocaleUpperCase() === code.toLocaleUpperCase());
           if (!quest) {
               ex.bot.send(`No quest with that code exists.`);
               return;
           }
+          if (users[name].completed.includes(quest.id)) {
+              ex.bot.send(`You've already completed that quest.`);
+              return;
+          }
           const available = getAvailableQuests(ex, users[name].completed);
           if (!available.some(q => q.id === quest.id)) {
-              ex.bot.send(`You can't complete that quest.`);
+              ex.bot.send(`You can't complete that quest... yet`);
               return;
           }
           checkLevelUp(ex, users[name].xp, quest.xp, name);
