@@ -1112,6 +1112,10 @@
   var html$3 = "<div class=\"container\">\r\n  <h3 class=\"title\">Log</h3>\r\n  <p>Use this tab to audit XP gains to catch cheaters.</p>\r\n  <br>\r\n  <div class=\"field has-addons\">\r\n    <div class=\"control\">\r\n      <input class=\"input\" placeholder=\"Filter by name\">\r\n    </div>\r\n    <div class=\"control\">\r\n      <a class=\"button is-primary\">Refresh List</a>\r\n    </div>\r\n    <div class=\"control\">\r\n      <a class=\"button is-danger\">Clear log</a>\r\n    </div>\r\n  </div>\r\n  <ol></ol>\r\n</div>\r\n";
 
   const KEY = 'log';
+  function addLogEntry(ex, entry) {
+      const logs = ex.storage.get(KEY, []).concat(Object.assign({ timestamp: Date.now() }, entry));
+      ex.storage.set(KEY, logs);
+  }
   class LogTab {
       constructor(container, ex) {
           this.getLogs = () => this.ex.storage.get(KEY, []);
@@ -1127,6 +1131,7 @@
           });
           container.querySelector('.is-danger').addEventListener('click', () => {
               this.ex.storage.set(KEY, []);
+              addLogEntry(this.ex, { message: 'Cleared logs', user: 'SERVER' });
               this.refreshList();
           });
       }
@@ -1251,17 +1256,22 @@
           if (!users[normalizedName]) {
               return ex.bot.send(`Cannot modify xp of <${normalizedName}>, no quests have been completed.`);
           }
+          const oldXP = users[normalizedName].xp;
           if (numericAmount < 0) {
               // xp cannot be negative
-              users[normalizedName].xp = Math.min(0, users[normalizedName].xp - numericAmount);
+              users[normalizedName].xp = Math.min(0, oldXP - numericAmount);
           }
           else {
-              checkLevelUp(ex, users[normalizedName].xp, numericAmount, normalizedName);
-              const willOverflow = Number.MAX_SAFE_INTEGER - numericAmount < users[normalizedName].xp;
-              users[normalizedName].xp = willOverflow ? Number.MAX_SAFE_INTEGER : users[normalizedName].xp + numericAmount;
+              checkLevelUp(ex, oldXP, numericAmount, normalizedName);
+              const willOverflow = Number.MAX_SAFE_INTEGER - numericAmount < oldXP;
+              users[normalizedName].xp = willOverflow ? Number.MAX_SAFE_INTEGER : oldXP + numericAmount;
           }
           setUsers(ex, users);
           ex.bot.send(`Updated ${normalizedName}'s xp to ${users[normalizedName].xp}`);
+          addLogEntry(ex, {
+              message: `Updated ${normalizedName}'s xp to ${users[normalizedName].xp} (was ${oldXP})`,
+              user: player.name
+          });
       });
       world.addCommand('quests', ({ name }) => displayQuests(ex, name));
       world.addCommand('quest', ({ name }, questName) => {
@@ -1321,6 +1331,7 @@
               description: quest.description,
               name
           });
+          addLogEntry(ex, { message: `Completed the ${quest.name} quest`, user: name });
       });
       world.addCommand('level', ({ name, isOwner }, target) => {
           const levels = getLevels(ex);

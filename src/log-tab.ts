@@ -38,7 +38,7 @@ export class LogTab {
 
     container.querySelector('.is-danger')!.addEventListener('click', () => {
       this.ex.storage.set(KEY, [])
-      addLogEntry(this.ex, { message: 'Cleared logs', timestamp: Date.now(), user: 'SERVER' })
+      addLogEntry(this.ex, { message: 'Cleared logs', user: 'SERVER' })
       this.refreshList()
     })
   }
