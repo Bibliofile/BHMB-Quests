@@ -3,6 +3,7 @@ import { getUsers, getUser, setUsers, INVALID_NAME } from './users-tab'
 import { QuestListing } from './quest'
 import { getList, getQuests } from './quests-tab'
 import { getLevels, Level } from './levels-tab'
+import { addLogEntry } from './log-tab'
 
 const match = (r: RegExp, s: string) => (s.match(r) || []).slice(1) as Array<string | undefined>
 
@@ -72,17 +73,23 @@ export function addCommands (ex: MessageBotExtension, world: World) {
       return ex.bot.send(`Cannot modify xp of <${normalizedName}>, no quests have been completed.`)
     }
 
+    const oldXP = users[normalizedName].xp
+
     if (numericAmount < 0) {
       // xp cannot be negative
-      users[normalizedName].xp = Math.min(0, users[normalizedName].xp - numericAmount)
+      users[normalizedName].xp = Math.min(0, oldXP - numericAmount)
     } else {
-      checkLevelUp(ex, users[normalizedName].xp, numericAmount, normalizedName)
-      const willOverflow = Number.MAX_SAFE_INTEGER - numericAmount < users[normalizedName].xp
-      users[normalizedName].xp = willOverflow ? Number.MAX_SAFE_INTEGER : users[normalizedName].xp + numericAmount
+      checkLevelUp(ex, oldXP, numericAmount, normalizedName)
+      const willOverflow = Number.MAX_SAFE_INTEGER - numericAmount < oldXP
+      users[normalizedName].xp = willOverflow ? Number.MAX_SAFE_INTEGER : oldXP + numericAmount
     }
     setUsers(ex, users)
 
     ex.bot.send(`Updated ${normalizedName}'s xp to ${users[normalizedName].xp}`)
+    addLogEntry(ex, {
+      message: `Updated ${normalizedName}'s xp to ${users[normalizedName].xp} (was ${oldXP})`,
+      user: player.name
+    })
   })
 
   world.addCommand('quests', ({ name }) => displayQuests(ex, name))
@@ -153,6 +160,7 @@ export function addCommands (ex: MessageBotExtension, world: World) {
       description: quest.description,
       name
     })
+    addLogEntry(ex, { message: `Completed the ${quest.name} quest`, user: name })
   })
 
   world.addCommand('level', ({ name, isOwner }, target) => {

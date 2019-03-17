@@ -11,6 +11,11 @@ export interface LogEntry {
 
 export type Logs = LogEntry[]
 
+export function addLogEntry (ex: MessageBotExtension, entry: Pick<LogEntry, 'message' | 'user'>) {
+  const logs = ex.storage.get<Logs>(KEY, []).concat({ timestamp: Date.now(), ...entry })
+  ex.storage.set(KEY, logs)
+}
+
 export class LogTab {
   ex: MessageBotExtension
   container: HTMLElement
@@ -33,6 +38,7 @@ export class LogTab {
 
     container.querySelector('.is-danger')!.addEventListener('click', () => {
       this.ex.storage.set(KEY, [])
+      addLogEntry(this.ex, { message: 'Cleared logs', timestamp: Date.now(), user: 'SERVER' })
       this.refreshList()
     })
   }
