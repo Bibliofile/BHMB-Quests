@@ -77,7 +77,7 @@ export function addCommands (ex: MessageBotExtension, world: World) {
 
     if (numericAmount < 0) {
       // xp cannot be negative
-      users[normalizedName].xp = Math.min(0, oldXP - numericAmount)
+      users[normalizedName].xp = Math.max(0, oldXP - numericAmount)
     } else {
       checkLevelUp(ex, oldXP, numericAmount, normalizedName)
       const willOverflow = Number.MAX_SAFE_INTEGER - numericAmount < oldXP
