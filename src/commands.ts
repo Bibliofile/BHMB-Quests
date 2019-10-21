@@ -99,21 +99,22 @@ export function addCommands (ex: MessageBotExtension, world: World) {
       return displayQuests(ex, name)
     }
 
-    const quest = getQuests(ex).find(q => q.name.toLocaleUpperCase() === questName.toLocaleUpperCase())
-    if (!quest) {
+    const quests = getQuests(ex).filter(q => q.name.toLocaleUpperCase() === questName.toLocaleUpperCase())
+    if (quests.length === 0) {
       ex.bot.send(`That quest doesn't exist.`)
       return
     }
 
     const { completed } = getUser(ex, name)
-    if (completed.includes(quest.id)) {
+    if (quests.every(quest => completed.includes(quest.id))) {
       ex.bot.send(`You have already completed that quest.`)
       return
     }
 
     const available = getAvailableQuests(ex, completed)
-    if (available.some(({ id }) => id === quest.id)) {
-      ex.bot.send(quest.description)
+    const availableQuest = quests.find(quest => available.some(({ id }) => id === quest.id))
+    if (availableQuest) {
+      ex.bot.send(availableQuest.description)
     } else {
       ex.bot.send(`You haven't unlocked that quest yet.`)
     }
