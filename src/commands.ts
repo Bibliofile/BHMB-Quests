@@ -64,7 +64,7 @@ export function addCommands (ex: MessageBotExtension, world: World) {
     const users = getUsers(ex)
     const sender = getUser(ex, player.name)
     if (!player.isOwner && !sender.questmaster) return
-    const [ name = '', amount = '0' ] = match(/^(.*?) ([+-]?\d+)$/, args)
+    const [ amount = '0', name = '' ] = match(/^([+-]?\d+) (.*)$/, args)
     const normalizedName = name.toLocaleUpperCase()
     const numericAmount = parseInt(amount, 10)
 
@@ -77,7 +77,7 @@ export function addCommands (ex: MessageBotExtension, world: World) {
 
     if (numericAmount < 0) {
       // xp cannot be negative
-      users[normalizedName].xp = Math.max(0, oldXP - numericAmount)
+      users[normalizedName].xp = Math.max(0, oldXP + numericAmount)
     } else {
       checkLevelUp(ex, oldXP, numericAmount, normalizedName)
       const willOverflow = Number.MAX_SAFE_INTEGER - numericAmount < oldXP
