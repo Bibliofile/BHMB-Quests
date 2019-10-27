@@ -181,11 +181,19 @@ export function addCommands (ex: MessageBotExtension, world: World) {
       currentLevel = levels.shift()
     }
 
+    const users = getUsers(ex)
+    const position = Object.keys(users)
+      .sort((a, b) => users[b].xp - users[a].xp)
+      .filter(name => name !== INVALID_NAME)
+      .indexOf(name) + 1
+
     if (currentLevel) {
-      ex.bot.send(` {{Name}}'s level: {{title}}\nxp: {{xp}}`, {
+      ex.bot.send(` {{Name}}'s level: {{title}}\nxp: {{xp}}\nrank: #{{position}}/{{total}}`, {
         name,
         title: currentLevel.title,
-        xp: Math.max(user.xp, 0).toString()
+        xp: Math.max(user.xp, 0).toString(),
+        position: position.toString(),
+        total: Object.keys(users).length.toString()
       })
     }
   })
