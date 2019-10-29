@@ -16,6 +16,6 @@ export class InfoTab {
       ex.storage.set(LEADERBOARD_SAVE_KEY, leaderboardCount)
     });
 
-    levelTopElement.setAttribute('value', getLeaderboardLimit(ex).toString())
+    levelTopElement.value = getLeaderboardLimit(ex).toString()
   }
 }
