@@ -4,6 +4,7 @@ import { QuestListing } from './quest'
 import { getList, getQuests } from './quests-tab'
 import { getLevels, Level } from './levels-tab'
 import { addLogEntry } from './log-tab'
+import { getLeaderboardLimit } from './info-tab';
 
 const match = (r: RegExp, s: string) => (s.match(r) || []).slice(1) as Array<string | undefined>
 
@@ -202,7 +203,7 @@ export function addCommands (ex: MessageBotExtension, world: World) {
     const users = getUsers(ex)
     const top = Object.keys(users)
       .sort((a, b) => users[b].xp - users[a].xp)
-      .slice(0, 10) // Todo: #1
+      .slice(0, getLeaderboardLimit(ex))
       .filter(name => name !== INVALID_NAME)
 
     const lines = ['Top Players:']
