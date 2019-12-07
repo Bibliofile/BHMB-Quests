@@ -158,6 +158,7 @@ export class QuestsTab {
     getInput('[data-for=code]').value = quest ? quest.code : ''
     getInput('[data-for=xp]').value = quest ? quest.xp.toString() : ''
     getInput('[data-for=complete]').value = quest ? quest.completeMessage : ''
+    getInput('[data-for=hidden]').checked = quest ? !!quest.hidden : false
   }
 
   save () {
@@ -172,6 +173,7 @@ export class QuestsTab {
       quest.description = getValue('[data-for=description]')
       quest.xp = +getValue('[data-for=xp]')
       quest.completeMessage = getValue('[data-for=complete]')
+      quest.hidden = this.container.querySelector<HTMLInputElement>('[data-for=hidden]')!.checked
       if (name !== quest.name) {
         quest.name = name
         this.ex.storage.set('quests', quests)

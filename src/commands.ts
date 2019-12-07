@@ -4,7 +4,7 @@ import { QuestListing } from './quest'
 import { getList, getQuests } from './quests-tab'
 import { getLevels, Level } from './levels-tab'
 import { addLogEntry } from './log-tab'
-import { getLeaderboardLimit } from './info-tab';
+import { getLeaderboardLimit } from './info-tab'
 
 const match = (r: RegExp, s: string) => (s.match(r) || []).slice(1) as Array<string | undefined>
 
@@ -47,15 +47,21 @@ function displayQuests (ex: MessageBotExtension, name: string) {
   const quests = getQuests(ex)
   const available = getAvailableQuests(ex, user.completed)
 
-  if (available.length === 0) {
+  if (available.length === 0 || available.every(a => quests.find(q => q.id === a.id)!.hidden)) {
     ex.bot.send('No available quests.')
     return
   }
 
   const message = ['Available quests:']
-  for (let i = 0; i < Math.min(5, available.length); i++) {
+  let i = 0
+  let added = 0
+  while (added < 5 && i < available.length) {
     const quest = quests.find(q => q.id === available[i].id)!
-    message.push(`${quest.name} (${quest.xp} xp)`)
+    if (!quest.hidden) {
+      message.push(`${quest.name} (${quest.xp} xp)`)
+      added++
+    }
+    i++
   }
   ex.bot.send(message.join('\n'))
 }

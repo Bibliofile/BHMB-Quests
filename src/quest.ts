@@ -23,6 +23,10 @@ export interface Quest {
    * Message sent when a user completes the quest
    */
   completeMessage: string
+  /**
+   * True if the quest should be omitted when doing /quests
+   */
+  hidden?: boolean
 }
 
 export type QuestListing = { id: number, children: QuestListing[] }
