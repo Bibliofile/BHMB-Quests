@@ -1013,7 +1013,7 @@
               quest.description = getValue('[data-for=description]');
               quest.xp = +getValue('[data-for=xp]');
               quest.completeMessage = getValue('[data-for=complete]');
-              quest.hidden = this.container.querySelector('[data-for=complete]').checked;
+              quest.hidden = this.container.querySelector('[data-for=hidden]').checked;
               if (name !== quest.name) {
                   quest.name = name;
                   this.ex.storage.set('quests', quests);
@@ -1242,7 +1242,7 @@
       const user = getUser(ex, name);
       const quests = getQuests(ex);
       const available = getAvailableQuests(ex, user.completed);
-      if (available.length === 0) {
+      if (available.length === 0 || available.every(a => quests.find(q => q.id === a.id).hidden)) {
           ex.bot.send('No available quests.');
           return;
       }
